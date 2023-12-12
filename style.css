@@ -95,3 +95,37 @@ button {
   background-color: transparent;
   border: none;
 }
+
+/* ---------------------------------- */
+/* custom properties                  */
+/* ---------------------------------- */
+
+:root {
+  /* colors */
+  --clr-text-red: 356, 100%, 66%; /* CTA text */
+  --clr-text-dark-blue: 208, 49%, 24%; /* headings */
+  --clr-text-white: 0, 0%, 100%; /* body text */
+  --clr-text-blue: 207, 13%, 34%; /* body text */
+  --clr-text-light-gray: 240, 2%, 79%; /* footer text */
+  
+  --clr-bg-light-red: 355, 100%, 74%; /* CTA hover background */
+  --clr-bg-dark-blue: 240, 10%, 16%; /* footer background */
+  --clr-bg-white: 0, 0%, 100%;
+  --clr-bg-light-gray: 0, 0%, 98%;
+
+  --clr-gradient-red: linear-gradient(135deg, hsl(13, 100%, 72%) 0%, hsl(353, 100%, 62%) 100%);
+  --clr-gradient-blue: linear-gradient(135deg, hsl(237, 17%, 21%) 0%, hsl(237, 23%, 32%) 100%);
+
+  /* typography */
+  --ff-overpass: 'Overpass', sans-serif;
+  --ff-ubuntu: 'Ubuntu', sans-serif;
+
+  --fs-200: clamp(0.5625rem, 0.7408rem + -0.1981vw, 0.6944rem);
+  --fs-300: clamp(0.75rem, 0.8624rem + -0.1249vw, 0.8331rem);
+  --fs-400: clamp(1rem, 1rem + 0vw, 1rem);
+  --fs-500: clamp(1.2rem, 1.1531rem + 0.2vw, 1.3331rem);
+  --fs-600: clamp(1.44rem, 1.3214rem + 0.5061vw, 1.7769rem);
+  --fs-700: clamp(1.7281rem, 1.5026rem + 0.9624vw, 2.3688rem);
+  --fs-800: clamp(2.0738rem, 1.6921rem + 1.6282vw, 3.1575rem);
+  --fs-900: clamp(2.4881rem, 1.8823rem + 2.585vw, 4.2088rem);
+}
