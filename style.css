@@ -129,3 +129,70 @@ button {
   --fs-800: clamp(2.0738rem, 1.6921rem + 1.6282vw, 3.1575rem);
   --fs-900: clamp(2.4881rem, 1.8823rem + 2.585vw, 4.2088rem);
 }
+
+/* ---------------------------------- */
+/* utility classes                    */
+/* ---------------------------------- */
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+.flow + .flow {
+  margin-block-start: 2em;
+}
+
+.content-grid {
+  --padding-inline: 1rem;
+  --content-max-width: 70%;
+  --middle-gap: 2rem;
+  --column-width: calc((var(--content-max-width) / 2) - var(--middle-gap));
+
+
+  display: grid;
+  grid-template-columns: 
+  [full-width-start] minmax(var(--padding-inline), 1fr)
+  [column-left-start]  min(50% - var(--padding-inline), var(--column-width))
+  [column-left-end middle-gap-start] var(--middle-gap)
+  [middle-gap-end column-right-start]  min(50% - var(--padding-inline), var(--column-width))
+  [column-right-end] minmax(var(--padding-inline), 1fr)
+  [full-width-end]
+}
+
+.content-grid > :not(:is(.col-left, .col-right)) {
+  grid-column: column-left-start / column-right-end;
+}
+
+.content-grid > .col-left {
+  grid-column: column-left;
+}
+
+.content-grid > .col-left--full-width {
+  grid-column: full-width-start / column-left-end;
+}
+
+.content-grid > .col-right {
+  grid-column: column-right;
+}
+
+.content-grid > .col-right--full-width {
+  grid-column: column-right-start / full-width-end;
+}
+
+@media (max-width: 40em) {
+  .content-grid {
+    grid-template-columns: 
+      [full-width-start] 2rem
+      [content-start] 1fr
+      [content-end] 2rem
+      [full-width-end];
+  }
+
+  .content-grid > :not(:is(.col-left, .col-right)) {
+    grid-column: content;
+  }
+
+  .content-grid > :is(.col-left, .col-right) {
+    grid-column: content;
+  }
+}
