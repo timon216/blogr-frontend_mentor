@@ -243,7 +243,9 @@ button {
   color: hsl(var(--clr-text-white));
 }
 
-/* btn-gradient (mobile) */
+.section-title {
+
+}
 /* section__title */
 /* section__subtitle */
 
@@ -380,6 +382,8 @@ header .action-buttons {
 }
 
 #mobile-nav {
+  display: none;
+
   padding: 1.5rem;
 
   text-align: center;
@@ -481,6 +485,8 @@ header .action-buttons {
   }
 
   #mobile-nav[data-visible="true"] {
+    display: block;
+
     position: absolute;
     top: 7.5rem;
     left: 1.5rem;
