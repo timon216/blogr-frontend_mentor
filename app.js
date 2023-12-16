@@ -38,3 +38,32 @@ function closeAllDialogs() {
   })
 }
 
+// mobile navigation
+
+const mobileNav = document.querySelector("#mobile-nav");
+const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+
+mobileNavToggle.addEventListener("click", () => {
+  const visibility = mobileNav.getAttribute("data-visible")
+  if (visibility === "false") {
+    mobileNav.setAttribute("data-visible", true)
+    mobileNavToggle.setAttribute("aria-expanded", true)
+  } else {
+    mobileNav.setAttribute("data-visible", false)
+    mobileNavToggle.setAttribute("aria-expanded", false)
+  }
+})
+
+const mobileNavAccordions = document.querySelectorAll(".mobile-nav__accordion")
+const accordionContentDivs = document.querySelectorAll(".accordion__content")
+
+mobileNavAccordions.forEach(accordion => {
+  accordion.addEventListener("click", (e) => {
+    if (e.target.classList.contains("accordion__btn")) {
+      accordionContentDivs.forEach(content => {
+        content.classList.remove("is-open")
+      })
+      accordion.querySelector(".accordion__content").classList.toggle("is-open")
+    }
+  })
+})

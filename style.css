@@ -369,6 +369,125 @@ header .action-buttons {
   margin-inline-start: auto;
 }
 
+/* mobile navigation */
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+#mobile-nav[data-visible="false"] {
+  display: none;
+}
+
+#mobile-nav {
+  padding: 1.5rem;
+
+  text-align: center;
+
+  background-color: hsl(var(--clr-bg-white));
+  box-shadow: rgb(38, 57, 77, 0.7) 0px 20px 30px -10px;
+  border-radius: 0.4rem;
+}
+
+#mobile-nav  ul {
+  list-style: "";
+}
+
+.mobile-nav__accordions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  text-align: center;
+}
+
+.accordion__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  margin-inline: auto;
+}
+
+.mobile-nav__accordion:has(.accordion__content.is-open) > .accordion__btn > img {
+  rotate: 180deg;
+}
+
+.accordion__content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease-out;
+
+  width: 100%;
+  margin-top: 1rem;
+
+  background-color: hsl(240, 6%, 94%);
+}
+
+.accordion__content.is-open {
+  grid-template-rows: 1fr;
+}
+
+.accordion__content ul {
+  overflow: hidden;
+}
+
+.accordion__content .nav-link {
+  margin-block: 1rem;
+}
+
+#mobile-nav .action-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-block: 2rem 1rem;
+  padding-top: 1rem;
+
+  border-top: 1px solid hsl(240, 7%, 81%);
+}
+
+#mobile-nav .btn--bg {
+  background: var(--clr-gradient-red);
+  color: hsl(var(--clr-text-white));
+}
+
+@media (max-width: 24em) {
+  .primary-nav {
+    display: none;
+  }
+
+  header .action-buttons {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    right: 2rem;
+    top: 3rem;
+
+    width: 2rem;
+
+    background-image: url('images/icon-hamburger.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    aspect-ratio: 1;
+    border: 0;
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url("images/icon-close.svg");
+  }
+
+  #mobile-nav[data-visible="true"] {
+    position: absolute;
+    top: 7.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
 /* hero */
 
 .hero {
