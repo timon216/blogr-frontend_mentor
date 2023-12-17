@@ -515,6 +515,10 @@ header .action-buttons {
     left: 1.5rem;
     right: 1.5rem;
   }
+
+  body:has(#mobile-nav[data-visible="true"]) {
+    overflow: hidden;
+  }
 }
 
 /* hero */
