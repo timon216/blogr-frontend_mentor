@@ -47,7 +47,7 @@ You can see live demo at https://blogr-fm.netlify.app/
   This solution is way more better than using overflow: hidden on the body element.
 
 - HTML dialog element (with JS methods .show(), .showModal() and .close()) 
-  ```css
+  ```html
   <dialog class="nav-item__dialog">
     <ul>
       <li><a href="#">About</a></li>
