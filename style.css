@@ -674,3 +674,66 @@ section p {
     background-position:  left -17rem;
   }
 }
+
+/* footer */
+
+footer {
+  padding: 3.5rem 2rem;
+
+  color: hsl(var(--clr-text-white));
+  text-align: center;
+
+  background-color: hsl(var(--clr-bg-dark-blue));
+  border-radius: 0 var(--border-radius) 0 0;
+}
+
+footer .logo {
+  margin-inline: auto;
+  margin-block-end: 2rem;
+}
+
+.footer-nav > div:not(:last-child) {
+  margin-block-end: 1.5rem;
+}
+
+.footer-nav h4 {
+  margin-block-end: 1rem;
+}
+
+.footer-nav li {
+  list-style: "";
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: hsl(var(--clr-text-white), 0.8);
+  font-weight: 300;
+  font-size: var(--fs-300);
+}
+
+@media (min-width: 24em) {
+  .footer-nav {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-inline-end: 5rem;
+  }
+
+  .footer-nav li {
+    margin-block: 0.4em;
+  }
+
+  .footer-nav li:is(:hover, :focus) {
+    text-decoration: underline;
+  }
+  
+  .footer-nav a {
+    font-size: var(--fs-400);
+  }
+
+  footer .logo {
+    margin-inline: 0;
+  }
+
+}
