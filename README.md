@@ -60,6 +60,6 @@ You can see live demo at https://blogr-fm.netlify.app/
   
 ## Continued development
 
-- Instrinsic Web Design - the page looks good with given breakpoint widths but it could be better in between and beyond them.
+- Intrinsic Web Design - the page looks good with given breakpoint widths but it could be better in between and beyond them.
 
 
