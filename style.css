@@ -380,8 +380,12 @@ header {
   transition: font-weight 0.3s ease-in-out;
 }
 
-.nav-link a:is(:hover) {
+.nav-link a:hover {
   font-weight: 600;
+}
+
+.nav-item:has(.dialog-open) > .nav-item__btn > img{
+  rotate: 180deg;
 }
 
 

@@ -10,14 +10,17 @@ const connectDialog = document.querySelector("#connect-dialog")
 productBtn.addEventListener("click", () => {
   closeAllDialogs()
   productDialog.show()
+  productDialog.classList.add("dialog-open")
 })
 companyBtn.addEventListener("click", () => {
   closeAllDialogs()
   companyDialog.show()
+  companyDialog.classList.add("dialog-open")
 })
 connectBtn.addEventListener("click", () => {
   closeAllDialogs()
   connectDialog.show()
+  connectDialog.classList.add("dialog-open")
 })
 
 const dialogs = document.querySelectorAll("dialog")
@@ -27,6 +30,7 @@ window.addEventListener("click", (e) => {
     if (!e.target.closest(".nav-item__dialog") || e.target.closest(".nav-link")) {
       dialogs.forEach(dialog => {
         dialog.close()
+        dialog.classList.remove("dialog-open")
       })
     }
   }
@@ -35,6 +39,7 @@ window.addEventListener("click", (e) => {
 function closeAllDialogs() {
   dialogs.forEach(dialog => {
     dialog.close()
+    dialog.classList.remove("dialog-open")
   })
 }
 
